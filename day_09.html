@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-09</title>
+    <style>
+        #div1{
+            background-color: black;
+            color: white;
+            font-size: xx-large;
+            height: 20vh;
+            margin-bottom: 4px;
+            text-align: center;
+            padding-top: 30px;
+
+        }
+        .div2{
+            background-color: black;
+            color: white;
+            font-size: xx-large;
+            height: 20vh;
+            margin-bottom: 4px;
+            text-align: center;
+            padding-top: 30px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">This is div2</div>
+    <div class="div2">This is div2</div>
+    
+
+    <script>
+
+        const div1 = document.getElementById('div1')
+        div1.textContent = 'This is div1'
+
+        const div2 = document.getElementsByClassName('div2')   // return html collection
+        //console.log(div2)
+        //console.log(div2[0])
+        div2[0].style.backgroundColor = 'gray'
+
+        const div3 = document.createElement('div')
+        div3.textContent = "This is div3"
+        div3.style.backgroundColor = 'olive'
+        div3.style.fontSize = 'xx-large'
+        div3.style.textAlign = 'center'
+        div3.style.height = '20vh'
+        div3.style.paddingTop = '30px'
+        div3.style.color = 'white'
+
+        const body = document.querySelector('body')
+        body.appendChild(div3)
+
+        const unorderList = document.createElement('ul')
+        const firstItem = document.createElement('li')
+        firstItem.innerHTML = 'First Item'
+        unorderList.appendChild(firstItem)
+        body.appendChild(unorderList)
+        const secondItem = document.createElement('li')
+        secondItem.innerHTML = 'Second Item'
+        unorderList.appendChild(secondItem)
+        unorderList.style.fontSize = 'x-large'
+
+        //console.log(div3.parentNode);    // div1 and div2 are not child of body but div 3 is why ?
+        //console.log(firstItem.parentNode);
+
+        body.removeChild(div3)
+        unorderList.removeChild(unorderList.lastChild)
+
+        unorderList.setAttribute("style","list-style-type:square")
+        unorderList.classList.add("unorderedList")
+        //console.log(unorderList.classList)
+        unorderList.classList.remove("unorderedList")
+        //console.log(unorderList.classList)
+
+        const paradiv = document.createElement('div')
+        div3.style.fontSize = 'xx-large'
+        div3.style.textAlign = 'center'
+        div3.style.height = '15vh'
+        div3.style.paddingTop = '30px'
+        div3.style.color = 'white'
+
+        const para = document.createElement('p')
+        let msg1 = 'Click the button below to change me..'
+        let msg2 = 'I am changed now...'
+        para.textContent = msg1
+        para.style.fontSize = 'xx-large'
+        
+        paradiv.appendChild(para)
+
+        const changeButton = document.createElement('button')
+        changeButton.textContent = 'CHANGE!'
+        changeButton.style.color = 'green'
+        changeButton.style.borderRadius = '5px'
+        console.log(changeButton.style.backgroundColor)
+        paradiv.appendChild(changeButton)
+        body.appendChild(paradiv)
+
+        changeButton.addEventListener('click',()=>{
+            if (para.textContent === msg1) {
+                para.textContent = msg2
+            } else {
+                para.textContent = msg1
+            }
+        })
+
+        changeButton.addEventListener('mouseover',()=>{
+            changeButton.style.backgroundColor = 'green'
+            changeButton.style.color = 'white'
+
+        })
+
+        changeButton.addEventListener('mouseleave',()=>{
+            changeButton.style.backgroundColor = ''
+            changeButton.style.color = 'green'
+
+        })
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
