@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+            background-color: black;
+            color: wheat;
+
+        }
+        .localStorage{
+            border: solid;
+            border-width: 1px;
+            width: 40vw;
+            height: 90vh;
+            padding-top: 15px;
+        }
+        .localStorage:hover{
+            box-shadow: 0 0 10px rgb(99, 255, 47);
+        }
+        .sessionStorage{
+            border: solid;
+            border-width: 1px;
+            width: 40vw;
+            height: 90vh;
+            padding-top: 15px;
+        }
+        .sessionStorage:hover{
+            box-shadow: 0 0 20px rgba(230, 6, 6, 0.869);
+        }
+        h2 {
+            text-align: center;
+            color: white;
+        }
+        label {
+            display: block;
+            margin: 15px 0 15px;
+            color: white;
+            font-weight: bolder;
+        }
+        input[type="text"], input[type="email"], input[type="color"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            margin-left: 5%;
+            margin-right: 5%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            width: 40%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            position: relative;
+            left: 25%;
+            margin-top: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+        
+    </style>
+    <!--Do not link script file in head tag-->
+    <!--<script src="day_20.js"></script>-->
+    <!--If your JavaScript is in the <head>, it may run before the DOM elements are available, leading to null values when trying to access elements.
+    Fixes: Move the script to the end of the <body>, use the DOMContentLoaded event, or add the defer attribute to ensure your script runs after the DOM is fully loaded.-->
+</head>
+<body>
+    <!--Comment-->
+    <div class="localStorage">
+        <div class="heading1" style="display: flex; justify-content: center;">
+            <h1>Local Storage</h1>
+        </div>
+        <div style="padding: 20px;">
+            <h2>User Preferences</h2>
+            <form id="localPreferencesForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+                <label for="theme">Preferred Theme Color:</label>
+                <input type="color" id="theme" name="theme" value="#ffffff">
+            
+                <input type="submit" value="Save Preferences">
+            </form>
+        </div>
+    </div>
+    <div class="sessionStorage">
+        <div class="heading2" style="display: flex; justify-content: center;">
+            <h1>Session Storage</h1>
+        </div>
+        <div style="padding: 20px;">
+            <h2>User Preferences</h2>
+            <form id="sessionPreferencesForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+                <label for="theme">Preferred Theme Color:</label>
+                <input type="color" id="theme" name="theme" value="#ffffff">
+            
+                <input type="submit" value="Save Preferences">
+            </form>
+        </div>
+    </div>
+    <script src="day_20.js"></script>  <!-- :-) -->
+</body>
+</html>
+
+
+
